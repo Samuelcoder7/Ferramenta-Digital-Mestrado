@@ -1,0 +1,356 @@
+:root {
+  --blue-dark: #004A5C;
+  --orange: #FF6A00;
+  --gray-light: #E6E6E6;
+  --gray-dark: #444444;
+  --white: #FFFFFF;
+  --radius: 16px;
+  --font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--white); /* alterado para fundo branco */
+  color: var(--gray-dark);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: var(--blue-dark);
+  padding: 0.5rem 0;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.decorative-line {
+  width: 2px;
+  height: 32px;
+  background: var(--orange);
+  margin-left: 16px;
+  border-radius: 2px;
+}
+
+.menu a {
+  color: var(--white);
+  margin-left: 24px;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: var(--orange);
+}
+
+/* Hero */
+.hero {
+  background: var(--gray-dark);
+  color: var(--white);
+  padding: 64px 0 48px 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  border-radius: 32px;
+  padding: 12px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.btn-primary:hover {
+  background: #e65c00;
+}
+
+/* Highlights */
+.highlights {
+  background: var(--white);
+  padding: 64px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.2rem;
+  color: var(--blue-dark);
+  transition: box-shadow 0.2s;
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--orange);
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* Description */
+.description {
+  background: var(--white);
+  padding: 48px 0;
+}
+
+.description-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.description-content h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: var(--blue-dark);
+}
+
+.description-content p {
+  margin-bottom: 16px;
+  font-size: 1.08rem;
+}
+
+.description-content .btn-primary {
+  margin-top: 20px;
+}
+
+/* Info Section */
+.info {
+  background: var(--white);
+  border-radius: var(--radius);
+  margin: 40px auto 32px auto;
+  max-width: 700px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.info-content {
+  text-align: center;
+}
+
+.info-content h3 {
+  color: var(--blue-dark);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.info-content p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.info-content .btn-primary {
+  margin-top: 16px;
+}
+
+/* Likert Form */
+.likert-form {
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,74,92,0.18), 0 1.5px 8px rgba(0,0,0,0.08);
+  max-width: 650px;      /* Aumenta a largura máxima */
+  width: 100%;
+  min-height: 420px;     /* Aumenta a altura mínima */
+  padding: 56px 48px 40px 48px; /* Mais espaço interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2.5px solid var(--orange);
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.likert-title {
+  color: var(--blue-dark);
+  font-size: 1.5rem;
+  margin-bottom: 28px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.likert-group {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.likert-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--gray-dark);
+  font-size: 1.08rem;
+}
+
+.likert-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.likert-scale label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--gray-dark);
+}
+
+.likert-scale input[type="radio"] {
+  margin-bottom: 4px;
+  accent-color: var(--orange);
+}
+
+.likert-form .btn-primary {
+  margin-top: 18px;
+  width: 100%;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255,106,0,0.10);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .cards {
+    gap: 16px;
+  }
+  .card {
+    width: 120px;
+    height: 120px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    height: 100px;
+    margin-bottom: 18px;
+  }
+  .info {
+    padding: 24px 8px;
+  }
+  .highlights {
+    padding: 32px 0;
+    min-height: unset;
+  }
+  .likert-form {
+    max-width: 98vw;
+    padding: 24px 8px 18px 8px;
+    min-height: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+  .description-content h2 {
+    font-size: 1.2rem;
+  }
+  .info-content h3 {
+    font-size: 1.1rem;
+  }
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+.report-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.report-card {
+  background: #E6E6E6;
+  border-radius: 16px;
+  padding: 24px 32px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,74,92,0.08);
+}
+.report-card h4 {
+  color: #004A5C;
+  margin-bottom: 10px;
+}

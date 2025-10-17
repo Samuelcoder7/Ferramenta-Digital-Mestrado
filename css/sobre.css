@@ -1,0 +1,104 @@
+ body {
+            margin: 0;
+            padding: 0;
+            background: #f5f6fa;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .custom-header {
+            background: #035164;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            height: 60px;
+            box-sizing: border-box;
+        }
+        .custom-header .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .custom-header .logo-area i {
+            font-size: 2rem;
+            color: #fff;
+        }
+        .custom-header .logo-area .divider {
+            width: 3px;
+            height: 38px;
+            background: #ff9000;
+            margin-left: 16px;
+        }
+        .custom-header .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .custom-header .nav-icons a {
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .custom-header .nav-icons a.ativo,
+        .custom-header .nav-icons a:hover {
+            color: #ff9000;
+        }
+        @media (max-width: 600px) {
+            .custom-header {
+                padding: 0 10px;
+                height: 48px;
+            }
+            .custom-header .logo-area i {
+                font-size: 1.3rem;
+            }
+            .custom-header .logo-area .divider {
+                height: 28px;
+                margin-left: 8px;
+            }
+            .custom-header .nav-icons {
+                gap: 16px;
+            }
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto 30px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+            padding: 40px 32px 32px 32px;
+        }
+        h2, h3 {
+            color: #035164;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-left: 22px;
+        }
+        ul li {
+            margin-bottom: 7px;
+            font-size: 1.05rem;
+        }
+        p {
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 1.08rem;
+        }
+        footer {
+            background: #035164;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0 12px 0;
+            font-size: 1rem;
+            margin-top: 40px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 -2px 8px rgba(60,60,60,0.05);
+        }
