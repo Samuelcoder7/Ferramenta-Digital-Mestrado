@@ -58,7 +58,8 @@
 
 <!-- Destaques -->
   <section class="highlights">
-    <form class="likert-form" id="likertForm">
+    <div class="likert-form">
+      <form action="" id="likertForm">
       <!-- Passo 1: Apresentação -->
       <div class="likert-step" id="step-1">
         <h2 class="likert-title">Bem-vindo!</h2>
@@ -70,109 +71,80 @@
       </div>
       <!-- Passo 2: Perguntas 1-3 -->
       <div class="likert-step" id="step-2" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas (1 de 3)</h2>
+        <h2 class="likert-title">Responda às perguntas SOCIAL SEGURANÇA (1 de 3)</h2>
         <div class="likert-group">
           <label class="likert-label">1. Como você avalia o acesso à moradia?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="moradia" value="1">1</label>
-            <label><input type="radio" name="moradia" value="2">2</label>
-            <label><input type="radio" name="moradia" value="3">3</label>
-            <label><input type="radio" name="moradia" value="4">4</label>
-            <label><input type="radio" name="moradia" value="5">5</label>
+            <label><input type="radio" name="q1" value="1">1</label>
+            <label><input type="radio" name="q1" value="2">2</label>
+            <label><input type="radio" name="q1" value="3">3</label>
+            <label><input type="radio" name="q1" value="4">4</label>
+            <label><input type="radio" name="q1" value="5">5</label>
           </div>
         </div>
         <div class="likert-group">
           <label class="likert-label">2. Como você avalia o acesso à alimentação?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="alimentacao" value="1">1</label>
-            <label><input type="radio" name="alimentacao" value="2">2</label>
-            <label><input type="radio" name="alimentacao" value="3">3</label>
-            <label><input type="radio" name="alimentacao" value="4">4</label>
-            <label><input type="radio" name="alimentacao" value="5">5</label>
-          </div>
-        </div>
-        <div class="likert-group">
-          <label class="likert-label">3. Como você avalia o acesso à saúde?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="saude" value="1">1</label>
-            <label><input type="radio" name="saude" value="2">2</label>
-            <label><input type="radio" name="saude" value="3">3</label>
-            <label><input type="radio" name="saude" value="4">4</label>
-            <label><input type="radio" name="saude" value="5">5</label>
+            <label><input type="radio" name="q2" value="1">1</label>
+            <label><input type="radio" name="q2" value="2">2</label>
+            <label><input type="radio" name="q2" value="3">3</label>
+            <label><input type="radio" name="q2" value="4">4</label>
+            <label><input type="radio" name="q2" value="5">5</label>
           </div>
         </div>
         <button type="button" class="btn-primary" id="toStep3Btn" disabled>Próxima</button>
       </div>
       <!-- Passo 3: Perguntas 4-6 -->
       <div class="likert-step" id="step-3" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas (2 de 3)</h2>
+        <h2 class="likert-title">Responda às perguntas SAÚDE E BEM ESTAR (2 de 3)</h2>
         <div class="likert-group">
           <label class="likert-label">4. Como você avalia o acesso à educação?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="educacao" value="1">1</label>
-            <label><input type="radio" name="educacao" value="2">2</label>
-            <label><input type="radio" name="educacao" value="3">3</label>
-            <label><input type="radio" name="educacao" value="4">4</label>
-            <label><input type="radio" name="educacao" value="5">5</label>
+            <label><input type="radio" name="q3" value="1">1</label>
+            <label><input type="radio" name="q3" value="2">2</label>
+            <label><input type="radio" name="q3" value="3">3</label>
+            <label><input type="radio" name="q3" value="4">4</label>
+            <label><input type="radio" name="q3" value="5">5</label>
           </div>
         </div>
         <div class="likert-group">
           <label class="likert-label">5. Como você avalia o acesso à segurança?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="seguranca" value="1">1</label>
-            <label><input type="radio" name="seguranca" value="2">2</label>
-            <label><input type="radio" name="seguranca" value="3">3</label>
-            <label><input type="radio" name="seguranca" value="4">4</label>
-            <label><input type="radio" name="seguranca" value="5">5</label>
-          </div>
-        </div>
-        <div class="likert-group">
-          <label class="likert-label">6. Como você avalia o acesso ao trabalho?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="trabalho" value="1">1</label>
-            <label><input type="radio" name="trabalho" value="2">2</label>
-            <label><input type="radio" name="trabalho" value="3">3</label>
-            <label><input type="radio" name="trabalho" value="4">4</label>
-            <label><input type="radio" name="trabalho" value="5">5</label>
+            <label><input type="radio" name="q4" value="1">1</label>
+            <label><input type="radio" name="q4" value="2">2</label>
+            <label><input type="radio" name="q4" value="3">3</label>
+            <label><input type="radio" name="q4" value="4">4</label>
+            <label><input type="radio" name="q4" value="5">5</label>
           </div>
         </div>
         <button type="button" class="btn-primary" id="toStep4Btn" disabled>Próxima</button>
       </div>
       <!-- Passo 4: Perguntas 7-9 -->
       <div class="likert-step" id="step-4" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas (3 de 3)</h2>
+        <h2 class="likert-title">Responda às perguntas EDUCAÇÃO CULTURA ESPORTE E LAZER (3 de 3)</h2>
         <div class="likert-group">
           <label class="likert-label">7. Como você avalia o acesso à assistência social?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="assistencia" value="1">1</label>
-            <label><input type="radio" name="assistencia" value="2">2</label>
-            <label><input type="radio" name="assistencia" value="3">3</label>
-            <label><input type="radio" name="assistencia" value="4">4</label>
-            <label><input type="radio" name="assistencia" value="5">5</label>
+            <label><input type="radio" name="q5" value="1">1</label>
+            <label><input type="radio" name="q5" value="2">2</label>
+            <label><input type="radio" name="q5" value="3">3</label>
+            <label><input type="radio" name="q5" value="4">4</label>
+            <label><input type="radio" name="q5" value="5">5</label>
           </div>
         </div>
         <div class="likert-group">
           <label class="likert-label">8. Como você avalia o acesso à documentação civil?</label>
           <div class="likert-scale">
-            <label><input type="radio" name="documentacao" value="1">1</label>
-            <label><input type="radio" name="documentacao" value="2">2</label>
-            <label><input type="radio" name="documentacao" value="3">3</label>
-            <label><input type="radio" name="documentacao" value="4">4</label>
-            <label><input type="radio" name="documentacao" value="5">5</label>
-          </div>
-        </div>
-        <div class="likert-group">
-          <label class="likert-label">9. Como você avalia o acesso à cultura e lazer?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="cultura" value="1">1</label>
-            <label><input type="radio" name="cultura" value="2">2</label>
-            <label><input type="radio" name="cultura" value="3">3</label>
-            <label><input type="radio" name="cultura" value="4">4</label>
-            <label><input type="radio" name="cultura" value="5">5</label>
+            <label><input type="radio" name="q6" value="1">1</label>
+            <label><input type="radio" name="q6" value="2">2</label>
+            <label><input type="radio" name="q6" value="3">3</label>
+            <label><input type="radio" name="q6" value="4">4</label>
+            <label><input type="radio" name="q6" value="5">5</label>
           </div>
         </div>
         <button type="button" class="btn-primary" id="toReportBtn" disabled>Ver Relatório</button>
       </div>
+      </form>
       <!-- Passo 5: Relatório -->
       <div class="likert-step" id="step-5" style="display:none;">
         <h2 class="likert-title">Relatório das Respostas</h2>
@@ -186,10 +158,6 @@
             <p id="alimentacaoResult"></p>
           </div>
           <div class="report-card">
-            <h4>Saúde</h4>
-            <p id="saudeResult"></p>
-          </div>
-          <div class="report-card">
             <h4>Educação</h4>
             <p id="educacaoResult"></p>
           </div>
@@ -198,20 +166,12 @@
             <p id="segurancaResult"></p>
           </div>
           <div class="report-card">
-            <h4>Trabalho</h4>
-            <p id="trabalhoResult"></p>
-          </div>
-          <div class="report-card">
             <h4>Assistência Social</h4>
             <p id="assistenciaResult"></p>
           </div>
           <div class="report-card">
             <h4>Documentação</h4>
             <p id="documentacaoResult"></p>
-          </div>
-          <div class="report-card">
-            <h4>Cultura e Lazer</h4>
-            <p id="culturaResult"></p>
           </div>
         </div>
         <button type="button" class="btn-primary" id="toFeedbackBtn" style="margin-top:24px;">Avaliar Ferramenta</button>
@@ -233,12 +193,11 @@
           <button type="button" class="btn-primary" id="backToReportBtn">Ver Relatório</button>
         </div>
       </div>
-    </form>
+    </div>
   </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Passos
   const steps = [
     document.getElementById('step-1'),
     document.getElementById('step-2'),
@@ -248,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('step-6')
   ];
 
-  // Botões
   const startBtn = document.getElementById('startBtn');
   const toStep3Btn = document.getElementById('toStep3Btn');
   const toStep4Btn = document.getElementById('toStep4Btn');
@@ -258,48 +216,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const backToReportBtn = document.getElementById('backToReportBtn');
   const form = document.getElementById('likertForm');
 
-  // Inputs das perguntas
-  const moradiaRadios = form.elements['moradia'];
-  const alimentacaoRadios = form.elements['alimentacao'];
-  const saudeRadios = form.elements['saude'];
-  const educacaoRadios = form.elements['educacao'];
-  const segurancaRadios = form.elements['seguranca'];
-  const trabalhoRadios = form.elements['trabalho'];
-  const assistenciaRadios = form.elements['assistencia'];
-  const documentacaoRadios = form.elements['documentacao'];
-  const culturaRadios = form.elements['cultura'];
+  const q1Radios = form.elements['q1'];
+  const q2Radios = form.elements['q2'];
+  const q3Radios = form.elements['q3'];
+  const q4Radios = form.elements['q4'];
+  const q5Radios = form.elements['q5'];
+  const q6Radios = form.elements['q6'];
 
-  // Funções para checar se cada bloco foi respondido
   function checkStep2Answered() {
     return (
-      Array.from(moradiaRadios).some(r => r.checked) &&
-      Array.from(alimentacaoRadios).some(r => r.checked) &&
-      Array.from(saudeRadios).some(r => r.checked)
+      Array.from(q1Radios).some(r => r.checked) &&
+      Array.from(q2Radios).some(r => r.checked)
     );
   }
   function checkStep3Answered() {
     return (
-      Array.from(educacaoRadios).some(r => r.checked) &&
-      Array.from(segurancaRadios).some(r => r.checked) &&
-      Array.from(trabalhoRadios).some(r => r.checked)
+      Array.from(q3Radios).some(r => r.checked) &&
+      Array.from(q4Radios).some(r => r.checked)
     );
   }
   function checkStep4Answered() {
     return (
-      Array.from(assistenciaRadios).some(r => r.checked) &&
-      Array.from(documentacaoRadios).some(r => r.checked) &&
-      Array.from(culturaRadios).some(r => r.checked)
+      Array.from(q5Radios).some(r => r.checked) &&
+      Array.from(q6Radios).some(r => r.checked)
     );
   }
 
-  // Avançar para perguntas 1-3
   startBtn.addEventListener('click', function () {
     steps[0].style.display = 'none';
     steps[1].style.display = 'block';
   });
 
-  // Habilitar botão "Próxima" do passo 2
-  [moradiaRadios, alimentacaoRadios, saudeRadios].forEach(group => {
+  [q1Radios, q2Radios].forEach(group => {
     Array.from(group).forEach(radio => {
       radio.addEventListener('change', function () {
         toStep3Btn.disabled = !checkStep2Answered();
@@ -307,14 +255,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Avançar para perguntas 4-6
   toStep3Btn.addEventListener('click', function () {
     steps[1].style.display = 'none';
     steps[2].style.display = 'block';
   });
 
-  // Habilitar botão "Próxima" do passo 3
-  [educacaoRadios, segurancaRadios, trabalhoRadios].forEach(group => {
+  [q3Radios, q4Radios].forEach(group => {
     Array.from(group).forEach(radio => {
       radio.addEventListener('change', function () {
         toStep4Btn.disabled = !checkStep3Answered();
@@ -322,14 +268,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Avançar para perguntas 7-9
   toStep4Btn.addEventListener('click', function () {
     steps[2].style.display = 'none';
     steps[3].style.display = 'block';
   });
 
-  // Habilitar botão "Ver Relatório" do passo 4
-  [assistenciaRadios, documentacaoRadios, culturaRadios].forEach(group => {
+  [q5Radios, q6Radios].forEach(group => {
     Array.from(group).forEach(radio => {
       radio.addEventListener('change', function () {
         toReportBtn.disabled = !checkStep4Answered();
@@ -337,13 +281,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Mostrar relatório
   toReportBtn.addEventListener('click', function () {
-    // Pega valores
     function getValue(name) {
-      return form.elements[name].value;
+      const element = form.elements[name];
+      if (element) {
+        return element.value;
+      }
+      return "";
     }
-    // Função para texto do resultado
+
     function getLabel(val) {
       switch(val) {
         case "1": return "Muito Ruim";
@@ -354,27 +300,23 @@ document.addEventListener('DOMContentLoaded', function () {
         default: return "-";
       }
     }
-    document.getElementById('moradiaResult').textContent = getLabel(getValue('moradia'));
-    document.getElementById('alimentacaoResult').textContent = getLabel(getValue('alimentacao'));
-    document.getElementById('saudeResult').textContent = getLabel(getValue('saude'));
-    document.getElementById('educacaoResult').textContent = getLabel(getValue('educacao'));
-    document.getElementById('segurancaResult').textContent = getLabel(getValue('seguranca'));
-    document.getElementById('trabalhoResult').textContent = getLabel(getValue('trabalho'));
-    document.getElementById('assistenciaResult').textContent = getLabel(getValue('assistencia'));
-    document.getElementById('documentacaoResult').textContent = getLabel(getValue('documentacao'));
-    document.getElementById('culturaResult').textContent = getLabel(getValue('cultura'));
+
+    document.getElementById('moradiaResult').textContent = getLabel(getValue('q1'));
+    document.getElementById('alimentacaoResult').textContent = getLabel(getValue('q2'));
+    document.getElementById('educacaoResult').textContent = getLabel(getValue('q3'));
+    document.getElementById('segurancaResult').textContent = getLabel(getValue('q4'));
+    document.getElementById('assistenciaResult').textContent = getLabel(getValue('q5'));
+    document.getElementById('documentacaoResult').textContent = getLabel(getValue('q6'));
 
     steps[3].style.display = 'none';
     steps[4].style.display = 'block';
   });
 
-  // Ir para avaliação da ferramenta
   toFeedbackBtn.addEventListener('click', function () {
     steps[4].style.display = 'none';
     steps[5].style.display = 'block';
   });
 
-  // Refazer formulário
   restartBtn.addEventListener('click', function () {
     form.reset();
     toStep3Btn.disabled = true;
@@ -383,13 +325,11 @@ document.addEventListener('DOMContentLoaded', function () {
     steps.forEach((step, idx) => step.style.display = idx === 0 ? 'block' : 'none');
   });
 
-  // Voltar para relatório
   backToReportBtn.addEventListener('click', function () {
     steps[5].style.display = 'none';
     steps[4].style.display = 'block';
   });
 });
 </script>
-</style>
 </body>
 </html>
