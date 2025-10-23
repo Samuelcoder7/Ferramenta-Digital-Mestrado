@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
   <!-- Cabeçalho -->
   <header class="header">
@@ -33,14 +35,16 @@
     </div>
   </section>
 
-  
+
 
   <!-- Texto/Descrição -->
   <section class="description">
     <div class="description-content">
       <h2>Sobre o Projeto</h2>
-      <p>O Projeto Ferramenta Digital – População em Situação de Rua tem como objetivo apoiar organizações e profissionais que atuam com grupos em vulnerabilidade social.</p>
-      <p>A proposta é oferecer uma ferramenta interativa capaz de identificar demandas prioritárias e sugerir ações práticas de intervenção</p>
+      <p>O Projeto Ferramenta Digital – População em Situação de Rua tem como objetivo apoiar organizações e
+        profissionais que atuam com grupos em vulnerabilidade social.</p>
+      <p>A proposta é oferecer uma ferramenta interativa capaz de identificar demandas prioritárias e sugerir ações
+        práticas de intervenção</p>
       <p>tornando o trabalho social mais eficiente e orientado por dados.</p>
       <button class="btn-primary">Leia Mais</button>
     </div>
@@ -50,100 +54,103 @@
   <section class="info">
     <div class="info-content">
       <h3>Como Funciona</h3>
-      <p>A ferramenta utiliza um questionário baseado em dimensões fundamentais — como moradia, saúde, segurança alimentar e educação — avaliadas por meio de uma escala Likert.</p>
-      <p>Os resultados são processados automaticamente, gerando diagnósticos e recomendações personalizadas para orientar as ações das equipes.</p>
+      <p>A ferramenta utiliza um questionário baseado em dimensões fundamentais — como moradia, saúde, segurança
+        alimentar e educação — avaliadas por meio de uma escala Likert.</p>
+      <p>Os resultados são processados automaticamente, gerando diagnósticos e recomendações personalizadas para
+        orientar as ações das equipes.</p>
       <button class="btn-primary">Ver Detalhes</button>
     </div>
   </section>
 
-<!-- Destaques -->
+  <!-- Destaques -->
   <section class="highlights">
     <div class="likert-form">
-      <form action="" id="likertForm">
-      <!-- Passo 1: Apresentação -->
-      <div class="likert-step" id="step-1">
-        <h2 class="likert-title">Bem-vindo!</h2>
-        <p style="margin-bottom: 24px;">
-          Esta ferramenta digital foi criada para apoiar o diagnóstico e a priorização de ações para a população em situação de rua.<br>
-          Clique no botão abaixo para iniciar o questionário.
-        </p>
-        <button type="button" class="btn-primary" id="startBtn">Iniciar Avaliação</button>
-      </div>
-      <!-- Passo 2: Perguntas 1-3 -->
-      <div class="likert-step" id="step-2" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas SOCIAL SEGURANÇA (1 de 3)</h2>
-        <div class="likert-group">
-          <label class="likert-label">1. Como você avalia o acesso à moradia?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q1" value="1">1</label>
-            <label><input type="radio" name="q1" value="2">2</label>
-            <label><input type="radio" name="q1" value="3">3</label>
-            <label><input type="radio" name="q1" value="4">4</label>
-            <label><input type="radio" name="q1" value="5">5</label>
-          </div>
+      <form action="actions/perguntas.php" id="likertForm" method="POST">
+        <!-- Passo 1: Apresentação -->
+        <div class="likert-step" id="step-1">
+          <h2 class="likert-title">Bem-vindo!</h2>
+          <p style="margin-bottom: 24px;">
+            Esta ferramenta digital foi criada para apoiar o diagnóstico e a priorização de ações para a população em
+            situação de rua.<br>
+            Clique no botão abaixo para iniciar o questionário.
+          </p>
+          <button type="button" class="btn-primary" id="startBtn">Iniciar Avaliação</button>
         </div>
-        <div class="likert-group">
-          <label class="likert-label">2. Como você avalia o acesso à alimentação?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q2" value="1">1</label>
-            <label><input type="radio" name="q2" value="2">2</label>
-            <label><input type="radio" name="q2" value="3">3</label>
-            <label><input type="radio" name="q2" value="4">4</label>
-            <label><input type="radio" name="q2" value="5">5</label>
+        <!-- Passo 2: Perguntas 1-3 -->
+        <div class="likert-step" id="step-2" style="display:none;">
+          <h2 class="likert-title">Responda às perguntas SOCIAL SEGURANÇA (1 de 3)</h2>
+          <div class="likert-group">
+            <label class="likert-label">1. Como você avalia o acesso à moradia?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q1" value="1">1</label>
+              <label><input type="radio" name="q1" value="2">2</label>
+              <label><input type="radio" name="q1" value="3">3</label>
+              <label><input type="radio" name="q1" value="4">4</label>
+              <label><input type="radio" name="q1" value="5">5</label>
+            </div>
           </div>
-        </div>
-        <button type="button" class="btn-primary" id="toStep3Btn" disabled>Próxima</button>
-      </div>
-      <!-- Passo 3: Perguntas 4-6 -->
-      <div class="likert-step" id="step-3" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas SAÚDE E BEM ESTAR (2 de 3)</h2>
-        <div class="likert-group">
-          <label class="likert-label">4. Como você avalia o acesso à educação?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q3" value="1">1</label>
-            <label><input type="radio" name="q3" value="2">2</label>
-            <label><input type="radio" name="q3" value="3">3</label>
-            <label><input type="radio" name="q3" value="4">4</label>
-            <label><input type="radio" name="q3" value="5">5</label>
+          <div class="likert-group">
+            <label class="likert-label">2. Como você avalia o acesso à alimentação?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q2" value="1">1</label>
+              <label><input type="radio" name="q2" value="2">2</label>
+              <label><input type="radio" name="q2" value="3">3</label>
+              <label><input type="radio" name="q2" value="4">4</label>
+              <label><input type="radio" name="q2" value="5">5</label>
+            </div>
           </div>
+          <button type="button" class="btn-primary" id="toStep3Btn" disabled>Próxima</button>
         </div>
-        <div class="likert-group">
-          <label class="likert-label">5. Como você avalia o acesso à segurança?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q4" value="1">1</label>
-            <label><input type="radio" name="q4" value="2">2</label>
-            <label><input type="radio" name="q4" value="3">3</label>
-            <label><input type="radio" name="q4" value="4">4</label>
-            <label><input type="radio" name="q4" value="5">5</label>
+        <!-- Passo 3: Perguntas 4-6 -->
+        <div class="likert-step" id="step-3" style="display:none;">
+          <h2 class="likert-title">Responda às perguntas SAÚDE E BEM ESTAR (2 de 3)</h2>
+          <div class="likert-group">
+            <label class="likert-label">4. Como você avalia o acesso à educação?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q3" value="1">1</label>
+              <label><input type="radio" name="q3" value="2">2</label>
+              <label><input type="radio" name="q3" value="3">3</label>
+              <label><input type="radio" name="q3" value="4">4</label>
+              <label><input type="radio" name="q3" value="5">5</label>
+            </div>
           </div>
-        </div>
-        <button type="button" class="btn-primary" id="toStep4Btn" disabled>Próxima</button>
-      </div>
-      <!-- Passo 4: Perguntas 7-9 -->
-      <div class="likert-step" id="step-4" style="display:none;">
-        <h2 class="likert-title">Responda às perguntas EDUCAÇÃO CULTURA ESPORTE E LAZER (3 de 3)</h2>
-        <div class="likert-group">
-          <label class="likert-label">7. Como você avalia o acesso à assistência social?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q5" value="1">1</label>
-            <label><input type="radio" name="q5" value="2">2</label>
-            <label><input type="radio" name="q5" value="3">3</label>
-            <label><input type="radio" name="q5" value="4">4</label>
-            <label><input type="radio" name="q5" value="5">5</label>
+          <div class="likert-group">
+            <label class="likert-label">5. Como você avalia o acesso à segurança?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q4" value="1">1</label>
+              <label><input type="radio" name="q4" value="2">2</label>
+              <label><input type="radio" name="q4" value="3">3</label>
+              <label><input type="radio" name="q4" value="4">4</label>
+              <label><input type="radio" name="q4" value="5">5</label>
+            </div>
           </div>
+          <button type="button" class="btn-primary" id="toStep4Btn" disabled>Próxima</button>
         </div>
-        <div class="likert-group">
-          <label class="likert-label">8. Como você avalia o acesso à documentação civil?</label>
-          <div class="likert-scale">
-            <label><input type="radio" name="q6" value="1">1</label>
-            <label><input type="radio" name="q6" value="2">2</label>
-            <label><input type="radio" name="q6" value="3">3</label>
-            <label><input type="radio" name="q6" value="4">4</label>
-            <label><input type="radio" name="q6" value="5">5</label>
+        <!-- Passo 4: Perguntas 7-9 -->
+        <div class="likert-step" id="step-4" style="display:none;">
+          <h2 class="likert-title">Responda às perguntas EDUCAÇÃO CULTURA ESPORTE E LAZER (3 de 3)</h2>
+          <div class="likert-group">
+            <label class="likert-label">7. Como você avalia o acesso à assistência social?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q5" value="1">1</label>
+              <label><input type="radio" name="q5" value="2">2</label>
+              <label><input type="radio" name="q5" value="3">3</label>
+              <label><input type="radio" name="q5" value="4">4</label>
+              <label><input type="radio" name="q5" value="5">5</label>
+            </div>
           </div>
+          <div class="likert-group">
+            <label class="likert-label">8. Como você avalia o acesso à documentação civil?</label>
+            <div class="likert-scale">
+              <label><input type="radio" name="q6" value="1">1</label>
+              <label><input type="radio" name="q6" value="2">2</label>
+              <label><input type="radio" name="q6" value="3">3</label>
+              <label><input type="radio" name="q6" value="4">4</label>
+              <label><input type="radio" name="q6" value="5">5</label>
+            </div>
+          </div>
+          <button type="button" class="btn-primary" id="toReportBtn" disabled>Ver Relatório</button>
         </div>
-        <button type="button" class="btn-primary" id="toReportBtn" disabled>Ver Relatório</button>
-      </div>
       </form>
       <!-- Passo 5: Relatório -->
       <div class="likert-step" id="step-5" style="display:none;">
@@ -174,7 +181,8 @@
             <p id="documentacaoResult"></p>
           </div>
         </div>
-        <button type="button" class="btn-primary" id="toFeedbackBtn" style="margin-top:24px;">Avaliar Ferramenta</button>
+        <button type="button" class="btn-primary" id="toFeedbackBtn" style="margin-top:24px;">Avaliar
+          Ferramenta</button>
       </div>
       <!-- Passo 6: Avaliação da ferramenta -->
       <div class="likert-step" id="step-6" style="display:none;">
@@ -196,140 +204,169 @@
     </div>
   </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const steps = [
-    document.getElementById('step-1'),
-    document.getElementById('step-2'),
-    document.getElementById('step-3'),
-    document.getElementById('step-4'),
-    document.getElementById('step-5'),
-    document.getElementById('step-6')
-  ];
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    var $form = $('#likertForm');
 
-  const startBtn = document.getElementById('startBtn');
-  const toStep3Btn = document.getElementById('toStep3Btn');
-  const toStep4Btn = document.getElementById('toStep4Btn');
-  const toReportBtn = document.getElementById('toReportBtn');
-  const toFeedbackBtn = document.getElementById('toFeedbackBtn');
-  const restartBtn = document.getElementById('restartBtn');
-  const backToReportBtn = document.getElementById('backToReportBtn');
-  const form = document.getElementById('likertForm');
+    document.addEventListener('DOMContentLoaded', function () {
+      const steps = [
+        document.getElementById('step-1'),
+        document.getElementById('step-2'),
+        document.getElementById('step-3'),
+        document.getElementById('step-4'),
+        document.getElementById('step-5'),
+        document.getElementById('step-6')
+      ];
 
-  const q1Radios = form.elements['q1'];
-  const q2Radios = form.elements['q2'];
-  const q3Radios = form.elements['q3'];
-  const q4Radios = form.elements['q4'];
-  const q5Radios = form.elements['q5'];
-  const q6Radios = form.elements['q6'];
+      const startBtn = document.getElementById('startBtn');
+      const toStep3Btn = document.getElementById('toStep3Btn');
+      const toStep4Btn = document.getElementById('toStep4Btn');
+      const toReportBtn = document.getElementById('toReportBtn');
+      const toFeedbackBtn = document.getElementById('toFeedbackBtn');
+      const restartBtn = document.getElementById('restartBtn');
+      const backToReportBtn = document.getElementById('backToReportBtn');
+      const form = document.getElementById('likertForm');
 
-  function checkStep2Answered() {
-    return (
-      Array.from(q1Radios).some(r => r.checked) &&
-      Array.from(q2Radios).some(r => r.checked)
-    );
-  }
-  function checkStep3Answered() {
-    return (
-      Array.from(q3Radios).some(r => r.checked) &&
-      Array.from(q4Radios).some(r => r.checked)
-    );
-  }
-  function checkStep4Answered() {
-    return (
-      Array.from(q5Radios).some(r => r.checked) &&
-      Array.from(q6Radios).some(r => r.checked)
-    );
-  }
+      const q1Radios = form.elements['q1'];
+      const q2Radios = form.elements['q2'];
+      const q3Radios = form.elements['q3'];
+      const q4Radios = form.elements['q4'];
+      const q5Radios = form.elements['q5'];
+      const q6Radios = form.elements['q6'];
 
-  startBtn.addEventListener('click', function () {
-    steps[0].style.display = 'none';
-    steps[1].style.display = 'block';
-  });
-
-  [q1Radios, q2Radios].forEach(group => {
-    Array.from(group).forEach(radio => {
-      radio.addEventListener('change', function () {
-        toStep3Btn.disabled = !checkStep2Answered();
-      });
-    });
-  });
-
-  toStep3Btn.addEventListener('click', function () {
-    steps[1].style.display = 'none';
-    steps[2].style.display = 'block';
-  });
-
-  [q3Radios, q4Radios].forEach(group => {
-    Array.from(group).forEach(radio => {
-      radio.addEventListener('change', function () {
-        toStep4Btn.disabled = !checkStep3Answered();
-      });
-    });
-  });
-
-  toStep4Btn.addEventListener('click', function () {
-    steps[2].style.display = 'none';
-    steps[3].style.display = 'block';
-  });
-
-  [q5Radios, q6Radios].forEach(group => {
-    Array.from(group).forEach(radio => {
-      radio.addEventListener('change', function () {
-        toReportBtn.disabled = !checkStep4Answered();
-      });
-    });
-  });
-
-  toReportBtn.addEventListener('click', function () {
-    function getValue(name) {
-      const element = form.elements[name];
-      if (element) {
-        return element.value;
+      function checkStep2Answered() {
+        return (
+          Array.from(q1Radios).some(r => r.checked) &&
+          Array.from(q2Radios).some(r => r.checked)
+        );
       }
-      return "";
-    }
-
-    function getLabel(val) {
-      switch(val) {
-        case "1": return "Muito Ruim";
-        case "2": return "Ruim";
-        case "3": return "Regular";
-        case "4": return "Boa";
-        case "5": return "Excelente";
-        default: return "-";
+      function checkStep3Answered() {
+        return (
+          Array.from(q3Radios).some(r => r.checked) &&
+          Array.from(q4Radios).some(r => r.checked)
+        );
       }
-    }
+      function checkStep4Answered() {
+        return (
+          Array.from(q5Radios).some(r => r.checked) &&
+          Array.from(q6Radios).some(r => r.checked)
+        );
+      }
 
-    document.getElementById('moradiaResult').textContent = getLabel(getValue('q1'));
-    document.getElementById('alimentacaoResult').textContent = getLabel(getValue('q2'));
-    document.getElementById('educacaoResult').textContent = getLabel(getValue('q3'));
-    document.getElementById('segurancaResult').textContent = getLabel(getValue('q4'));
-    document.getElementById('assistenciaResult').textContent = getLabel(getValue('q5'));
-    document.getElementById('documentacaoResult').textContent = getLabel(getValue('q6'));
+      startBtn.addEventListener('click', function () {
+        steps[0].style.display = 'none';
+        steps[1].style.display = 'block';
+      });
 
-    steps[3].style.display = 'none';
-    steps[4].style.display = 'block';
-  });
+      [q1Radios, q2Radios].forEach(group => {
+        Array.from(group).forEach(radio => {
+          radio.addEventListener('change', function () {
+            toStep3Btn.disabled = !checkStep2Answered();
+          });
+        });
+      });
 
-  toFeedbackBtn.addEventListener('click', function () {
-    steps[4].style.display = 'none';
-    steps[5].style.display = 'block';
-  });
+      toStep3Btn.addEventListener('click', function () {
+        steps[1].style.display = 'none';
+        steps[2].style.display = 'block';
+      });
 
-  restartBtn.addEventListener('click', function () {
-    form.reset();
-    toStep3Btn.disabled = true;
-    toStep4Btn.disabled = true;
-    toReportBtn.disabled = true;
-    steps.forEach((step, idx) => step.style.display = idx === 0 ? 'block' : 'none');
-  });
+      [q3Radios, q4Radios].forEach(group => {
+        Array.from(group).forEach(radio => {
+          radio.addEventListener('change', function () {
+            toStep4Btn.disabled = !checkStep3Answered();
+          });
+        });
+      });
 
-  backToReportBtn.addEventListener('click', function () {
-    steps[5].style.display = 'none';
-    steps[4].style.display = 'block';
-  });
-});
-</script>
+      toStep4Btn.addEventListener('click', function () {
+        steps[2].style.display = 'none';
+        steps[3].style.display = 'block';
+      });
+
+      [q5Radios, q6Radios].forEach(group => {
+        Array.from(group).forEach(radio => {
+          radio.addEventListener('change', function () {
+            toReportBtn.disabled = !checkStep4Answered();
+          });
+        });
+      });
+
+      toReportBtn.addEventListener('click', function (e) {
+        var formAction = $form.attr('action');
+        var formMethod = $form.attr('method');
+        var formData = $form.serialize();
+
+        $.ajax({
+          url: formAction,
+          type: formMethod,
+          data: formData,
+          dataType: 'json',
+          success: function (response) {
+            console.log('Sucesso:', response);
+
+          },
+          error: function (xhr, status, error) {
+            console.log('Erro:', status, error);
+
+          },
+          complete: function () {
+            console.log('Requisição completa.');
+
+          }
+        });
+
+        function getValue(name) {
+          const element = form.elements[name];
+          if (element) {
+            return element.value;
+          }
+          return "";
+        }
+
+        function getLabel(val) {
+          switch (val) {
+            case "1": return "Muito Ruim";
+            case "2": return "Ruim";
+            case "3": return "Regular";
+            case "4": return "Boa";
+            case "5": return "Excelente";
+            default: return "-";
+          }
+        }
+
+        document.getElementById('moradiaResult').textContent = getLabel(getValue('q1'));
+        document.getElementById('alimentacaoResult').textContent = getLabel(getValue('q2'));
+        document.getElementById('educacaoResult').textContent = getLabel(getValue('q3'));
+        document.getElementById('segurancaResult').textContent = getLabel(getValue('q4'));
+        document.getElementById('assistenciaResult').textContent = getLabel(getValue('q5'));
+        document.getElementById('documentacaoResult').textContent = getLabel(getValue('q6'));
+
+        steps[3].style.display = 'none';
+        steps[4].style.display = 'block';
+      });
+
+      toFeedbackBtn.addEventListener('click', function () {
+        steps[4].style.display = 'none';
+        steps[5].style.display = 'block';
+      });
+
+      restartBtn.addEventListener('click', function () {
+        form.reset();
+        toStep3Btn.disabled = true;
+        toStep4Btn.disabled = true;
+        toReportBtn.disabled = true;
+        steps.forEach((step, idx) => step.style.display = idx === 0 ? 'block' : 'none');
+      });
+
+      backToReportBtn.addEventListener('click', function () {
+        steps[5].style.display = 'none';
+        steps[4].style.display = 'block';
+      });
+    });
+  </script>
 </body>
+
 </html>

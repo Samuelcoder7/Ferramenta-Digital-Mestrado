@@ -1,134 +1,48 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 20/10/2025 às 00:14
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Banco de dados: `registro_respostas`
---
-
+-- --------------------------------------------------------
+-- Servidor:                     127.0.0.1
+-- Versão do servidor:           10.4.32-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              12.6.0.6765
 -- --------------------------------------------------------
 
---
--- Estrutura para tabela `avaliacao`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `avaliacao` (
-  `id_avaliacao` int(11) NOT NULL,
-  `local` varchar(150) NOT NULL,
+
+-- Copiando estrutura do banco de dados para registro_respostas
+CREATE DATABASE IF NOT EXISTS `registro_respostas` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+USE `registro_respostas`;
+
+-- Copiando estrutura para tabela registro_respostas.avaliacao
+CREATE TABLE IF NOT EXISTS `avaliacao` (
+  `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT,
   `categoria1` enum('Péssimo','Ruim','Regular','Boa','Ótima') NOT NULL,
   `categoria2` enum('Péssimo','Ruim','Regular','Boa','Ótima') NOT NULL,
   `categoria3` enum('Péssimo','Ruim','Regular','Boa','Ótima') NOT NULL,
   `data_avaliacao` date DEFAULT curdate(),
-  `id_avaliador` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  PRIMARY KEY (`id_avaliacao`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-- Exportação de dados foi desmarcado.
 
---
--- Estrutura para tabela `feedback`
---
-
-CREATE TABLE `feedback` (
-  `id_feedback` int(11) NOT NULL,
-  `id_avaliador` int(11) NOT NULL,
+-- Copiando estrutura para tabela registro_respostas.feedback
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `id_feedback` int(11) NOT NULL AUTO_INCREMENT,
   `estrelas` int(11) DEFAULT NULL CHECK (`estrelas` between 1 and 5),
-  `descricao` text DEFAULT NULL
+  `descricao` text DEFAULT NULL,
+  PRIMARY KEY (`id_feedback`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+-- Exportação de dados foi desmarcado.
 
---
--- Estrutura para tabela `funcionarios`
---
-
-CREATE TABLE `funcionarios` (
-  `id_avaliador` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
-  `data_nasc` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `avaliacao`
---
-ALTER TABLE `avaliacao`
-  ADD PRIMARY KEY (`id_avaliacao`),
-  ADD KEY `id_avaliador` (`id_avaliador`);
-
---
--- Índices de tabela `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`id_feedback`),
-  ADD KEY `id_avaliador` (`id_avaliador`);
-
---
--- Índices de tabela `funcionarios`
---
-ALTER TABLE `funcionarios`
-  ADD PRIMARY KEY (`id_avaliador`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `avaliacao`
---
-ALTER TABLE `avaliacao`
-  MODIFY `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `id_feedback` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `funcionarios`
---
-ALTER TABLE `funcionarios`
-  MODIFY `id_avaliador` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `avaliacao`
---
-ALTER TABLE `avaliacao`
-  ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`id_avaliador`) REFERENCES `funcionarios` (`id_avaliador`);
-
---
--- Restrições para tabelas `feedback`
---
-ALTER TABLE `feedback`
-  ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`id_avaliador`) REFERENCES `funcionarios` (`id_avaliador`);
-COMMIT;
-
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
